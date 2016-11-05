@@ -1,7 +1,7 @@
 #
 # VERSION 0.0.1
 #
- 
+
 FROM ubuntu:14.04
 MAINTAINER pacoalcantara
  
@@ -24,5 +24,5 @@ COPY WEB-INF /tmp/WEB-INF
 RUN jar -cf /tmp/webapp.war /tmp/WEB-INF
 RUN mv /tmp/webapp.war /var/lib/tomcat7/webapps/ROOT.war
  
-EXPOSE 8080
+#EXPOSE 8080
 CMD /etc/init.d/tomcat7 start && wait && tail -f /var/lib/tomcat7/logs/catalina.out
