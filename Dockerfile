@@ -6,7 +6,7 @@ FROM ubuntu:14.04
 MAINTAINER pacoalcantara
  
 # Setup
-RUN apt-get install -y software-properties-common debconf-utils
+RUN apt-get update && apt-get install -y software-properties-common debconf-utils
 RUN add-apt-repository -y ppa:webupd8team/java
 RUN apt-get update
  
