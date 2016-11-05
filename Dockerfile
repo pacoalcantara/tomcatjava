@@ -20,7 +20,8 @@ RUN apt-get install -y tomcat7
 ENV JAVA_HOME /usr/lib/jvm/java-7-oracle/jre
  
 RUN rm -r /var/lib/tomcat7/webapps/ROOT
-RUN jar -cf webapp.war ./WEB-INF
+COPY ./WEB-INF /tmp/
+RUN jar -cf /tmp/webapp.war /tmp/WEB-INF
 ADD ./webapp.war /var/lib/tomcat7/webapps/ROOT.war
  
 EXPOSE 8081
