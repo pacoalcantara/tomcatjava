@@ -20,7 +20,7 @@ RUN apt-get install -y tomcat7
 ENV JAVA_HOME /usr/lib/jvm/java-7-oracle/jre
  
 RUN rm -r /var/lib/tomcat7/webapps/ROOT
-COPY WEB-INF /tmp/
+COPY WEB-INF /tmp/WEB-INF
 RUN jar -cf /tmp/webapp.war /tmp/WEB-INF
 ADD ./webapp.war /var/lib/tomcat7/webapps/ROOT.war
  
