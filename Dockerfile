@@ -21,7 +21,7 @@ ENV JAVA_HOME /usr/lib/jvm/java-7-oracle/jre
  
 RUN rm -r /var/lib/tomcat7/webapps/ROOT
 COPY WEB-INF /tmp/WEB-INF
-RUN jar -cf webapp.war /tmp/WEB-INF
+RUN jar -cf /tmp/webapp.war /tmp/WEB-INF
 RUN mv /tmp/webapp.war /var/lib/tomcat7/webapps/ROOT.war
  
 EXPOSE 8081
